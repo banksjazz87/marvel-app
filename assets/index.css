@@ -1,0 +1,18 @@
+#main-body {
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
+
+.header {
+    height: 20vh;
+}
+
+.default-width-btn {
+    min-width: 250px;
+    padding: 1rem 4rem;
+}
+
+.main-footer {
+    height: 10vh;
+}
