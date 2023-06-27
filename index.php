@@ -31,7 +31,7 @@
                 </form>
             </div>
         </article>
-
+    <?php require 'private.php' ?>
     <?php require 'parts/footer.php'?>
     </body>
 </html>
