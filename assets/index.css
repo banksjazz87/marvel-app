@@ -26,6 +26,7 @@
 
 .hero_title {
     margin-top: 2rem;
+    margin-left: 2rem;
 }
 
 .table_row {
@@ -34,4 +35,20 @@
 
 #table_article {
     margin-bottom: 10rem;
+}
+
+.image {
+    width: 300px;
+    text-align: center;
+}
+
+.image-header {
+    text-align: center;
+}
+
+#marvel_table {
+    min-width: 950px;
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, .4);
 }

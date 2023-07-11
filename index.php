@@ -7,10 +7,15 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/assets/index.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" hreft="//cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" >
+        <script type="text/javascript" src="//cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
         <script type="text/javascript" src="/src/main.js"></script>
+       
     </head>
     <body id="main-body">
         <?php 
@@ -32,19 +37,24 @@
             </div>
         </article>
         <article id="table_article" style="margin-top: 2rem;">
-            <div class = "d-flex flex-row justify-content-center">
-                <table>
-                    <tbody>
+            <div class="d-flex flex-column justify-content-center align-items-center column-gap-3">
+                <table id="marvel_table" class="display bg-dark">
+                    <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Image</th>
+                            <th class="table-header">Name</th>
+                            <th class="table-header image-header">Image</th>
+                            <th>Testing</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <?php require 'private.php' ?>
                     </tbody>
-
                 </table>
             </div>
         </article>
+
+       
+
     <?php require 'parts/footer.php'?>
     </body>
 </html>
