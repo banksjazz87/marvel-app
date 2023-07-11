@@ -16,3 +16,22 @@
 .main-footer {
     height: 10vh;
 }
+
+.hero-image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 2rem;
+}
+
+.hero_title {
+    margin-top: 2rem;
+}
+
+.table_row {
+    margin-top: 2rem;
+}
+
+#table_article {
+    margin-bottom: 10rem;
+}

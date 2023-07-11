@@ -31,7 +31,20 @@
                 </form>
             </div>
         </article>
-    <?php require 'private.php' ?>
+        <article id="table_article" style="margin-top: 2rem;">
+            <div class = "d-flex flex-row justify-content-center">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Image</th>
+                        </tr>
+                        <?php require 'private.php' ?>
+                    </tbody>
+
+                </table>
+            </div>
+        </article>
     <?php require 'parts/footer.php'?>
     </body>
 </html>
