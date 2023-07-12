@@ -40,6 +40,17 @@
 .image {
     width: 300px;
     text-align: center;
+    transition: all .4s ease-in-out;
+}
+
+.hero-image {
+    transition: all .4s ease-in-out;
+}
+
+.hero-image:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, .2);
+    cursor: pointer;
 }
 
 .image-header {
@@ -51,4 +62,9 @@
     color: white;
     border-radius: 12px;
     box-shadow: 0 12px 36px rgba(0, 0, 0, .4);
+}
+
+.table-data {
+    min-width: 150px;
+    max-width: 400px;
 }
