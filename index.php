@@ -43,8 +43,7 @@
                         <tr>
                             <th class="table-header">Name</th>
                             <th class="table-header image-header">Image</th>
-                            <th class="table-header">Description</th>
-                            <th>Testing</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
