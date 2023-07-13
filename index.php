@@ -47,7 +47,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php require 'private.php' ?>
+                        <?php require 'apiClass.php' ?>
+                        <?php require './parts/characterTable.php' ?>
+                        <?php 
+                            $characters = new MarvelApi(0);
+                            $data = $characters->getAllCharacters();
+                            returnNamesAndImages($data);
+
+                            $oneChar = new MarvelApi(1011334);
+                            $oneChar->getOneCharacter();
+                        ?>
+
                     </tbody>
                 </table>
             </div>
