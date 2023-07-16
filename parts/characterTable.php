@@ -2,7 +2,9 @@
 function returnNamesAndImages($value) {
     foreach ( $value["data"]["results"] as $master_key => $hero) {
         $img_src = $hero['thumbnail']['path'];
-        if ( ! str_contains($img_src, 'image_not_available' )) {
+        $description = $hero['description'];
+
+        if ( ! str_contains($img_src, 'image_not_available' ) && strlen($description) > 0) {
             $data_row = "<tr class='table_row'>";
 
             $name = $hero['name'];

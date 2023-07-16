@@ -51,7 +51,7 @@
                         <?php require './parts/characterTable.php' ?>
                         <?php 
                             $characters = new MarvelApi(0);
-                            $data = $characters->getAllCharacters();
+                            $data = $characters->getAllCharacters(1100);
                             returnNamesAndImages($data);
 
                             $oneChar = new MarvelApi(1011334);
