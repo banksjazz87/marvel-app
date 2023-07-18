@@ -12,12 +12,11 @@ function returnNamesAndImages($value) {
 
             $data_row .= "<td class='table-data title_data'><p class='hero_title'> $name </p></td>";
 
-            $data_row .= "<td class='table-data image'><img class='hero-image' src='".$img_src.".".$image_ext."' ></td>"; 
+            $data_row .= "<td class='table-data image'><img id='$id'class='hero-image' src='".$img_src.".".$image_ext."' ></td>"; 
 
             $data_row .= "<td class='table-data'><form method='get' action='/views/character.php/'><input type='hidden' id='id' name='id' value=$id /> <input type='submit' value='Read More' class='btn btn-info'></form></td>";
 
             echo $data_row .= "</tr>";
-    // }
     }
 
 }

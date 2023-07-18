@@ -1,8 +1,16 @@
-$(function () {
-    $("#start-button").click(() => {
-        alert('This button has been clicked');
-        $.get()
+$(function() {
+
+    $('#marvel_table').dataTable({
+        pageLength: 25
     });
 
-    let table = new DataTable('#marvel_table');
+    $(".hero-image").click((e) => {
+        e.preventDefault();
+
+        let currentId = e.target.id;
+        let newURL = `/views/character.php/?id=${currentId}`;
+
+        window.location = newURL;
+    });
+
 });

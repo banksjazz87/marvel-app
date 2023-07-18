@@ -39,10 +39,7 @@
 
         <article style="margin-top: 2rem">
             <div class="d-flex flex-column justify-content-center align-items-center row-gap-3">
-                <h2>Let's get started in learning about Marvel</h2>
-                <form method="POST" action=<?php echo $marvel_base ?>>
-                    <input id="start-button" type="submit" class="btn btn-primary default-width-btn" value="Start" />
-                </form>
+                <h2>Welcome to the wonderful world of Marvel.</h2>
             </div>
         </article>
 
