@@ -1,10 +1,9 @@
 <?php
 function returnNamesAndImages($value) {
-    foreach ( $value["data"]["results"] as $master_key => $hero) {
+    foreach ( $value["data"]["results"] as $hero) {
         $img_src = $hero['thumbnail']['path'];
-        $description = $hero['description'];
 
-        if ( ! str_contains($img_src, 'image_not_available' ) && strlen($description) > 0) {
+        // if ( ! str_contains($img_src, 'image_not_available' ) && strlen($description) > 0) {
             $data_row = "<tr class='table_row'>";
 
             $name = $hero['name'];
@@ -18,7 +17,8 @@ function returnNamesAndImages($value) {
             $data_row .= "<td class='table-data'><form method='get' action='/views/character.php/'><input type='hidden' id='id' name='id' value=$id /> <input type='submit' value='Read More' class='btn btn-info'></form></td>";
 
             echo $data_row .= "</tr>";
+    // }
     }
-    }
+
 }
 ?>

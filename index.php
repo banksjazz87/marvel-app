@@ -17,6 +17,15 @@
         <script type="text/javascript" src="/src/main.js"></script>
        
     </head>
+    <?php
+    require 'apiClass.php';
+    $characters = new MarvelApi(0);
+        if (isset($_GET['offset'])) {
+            $data = $characters->getAllCharacters($_GET['offset']);
+        } else {
+            $data = $characters->getAllCharacters(0);
+        }
+    ?>
     <body id="main-body">
         <?php 
             $marvel_base = "https://gateway.marvel.com/";
@@ -36,6 +45,16 @@
                 </form>
             </div>
         </article>
+
+        <div style="margin-top: 4rem" class="d-flex flex-column justify-content-center align-items-center">
+            <h3 class="pt-6">
+                <?php 
+                    $first = array_slice($data['data']['results'], 0, 1);
+                    $last = array_slice($data['data']['results'], -1, 1);
+                    echo "{$first[0]['name']} - {$last[0]['name']}";
+                ?>
+            </h3>
+        </div>
         <article id="table_article" style="margin-top: 2rem;">
             <div class="d-flex flex-column justify-content-center align-items-center column-gap-3">
                 <table id="marvel_table" class="display bg-dark">
@@ -47,19 +66,36 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php require 'apiClass.php' ?>
-                        <?php require './parts/characterTable.php' ?>
+                        
                         <?php 
-                            $characters = new MarvelApi(0);
-                            $data = $characters->getAllCharacters(1100);
+                            require './parts/characterTable.php';
                             returnNamesAndImages($data);
-
-                            $oneChar = new MarvelApi(1011334);
-                            $oneChar->getOneCharacter();
                         ?>
-
                     </tbody>
                 </table>
+
+                <?php 
+
+                function showButton($num) {
+                    echo "<form method='get' action='/index.php/'><input type='hidden' name='offset' id='offset' value='$num'><input type='submit' value='See More' class='btn btn-info'/></form>";
+                }
+
+                    if (!isset($_GET['offset'])) {
+                        showButton(100);
+
+                    } else if ($_GET['offset'] === 1500 ) {
+                        showButton(0);
+
+                    } else {
+                        $currentOffset = $_GET['offset'];
+                        $currentOffset = $currentOffset + 100;
+                        showButton($currentOffset);
+                    }
+
+                    
+                    
+                ?>
+
             </div>
         </article>
 
