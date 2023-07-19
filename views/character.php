@@ -31,15 +31,6 @@
         $image = $characterArray['thumbnail']['path'] . "." . $characterArray['thumbnail']['extension'];
         $description = $characterArray['description'];
 
-        $comics = $api->getCharacterComics();
-       
-        //[data][results]: [id]
-
-        foreach ( $comics['data']['results'] as $value ) {
-            $thumb = $value['thumbnail'];
-            var_dump($thumb);
-        }
-        //var_dump($comics['data']['results'][0]['thumbnail']);
     ?>
     
     <body>
@@ -61,12 +52,7 @@
         } else {
             echo "<p>Unfortunately $name has no available description</p>";
         }
-
-        // var_dump($comics);
-        // foreach ( $characterArray['comics']['items'] as $value ) {
-        //     $comicBook = $value['name'];
-        //     echo "<p>$comicBook</p>";
-        // }
+        
         ?>
 
         
