@@ -56,7 +56,9 @@ $description = $characterArray['description'];
             </div>
         </div>
 
-    <?php include "../parts/comics.php" ?>
+    <div class="row d-flex flex-row justify-content-center gap-4 mt-4">
+        <?php include "../parts/comics.php" ?>
+    </div>
     </div>
 
 </body>

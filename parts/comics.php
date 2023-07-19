@@ -16,11 +16,19 @@
         $description = $value['description'];
       
      ?>
-     <div>
-        <img src="<?php echo $thumbnail?>" alt="<?php echo $title . " image."?>" />
-        <h3> <?php echo $title ?> </h3>
-        <p> <?php echo $description ?> </p>
-     </div>
+    
+     <div class="card" style="width: 250px;">
+        <div class="card-body">
+        <img class="card-img" src="<?php echo $thumbnail?>" alt="<?php echo $title . " image."?>" >
+        <p class="card-title mute"> <?php echo $title ?> </p>
+    </div>
+
+        <div class="card-footer text-center">
+            <a class="muted">Read More</a>
+        </div>
+  
+    </div>
+    
 
 <?php endforeach ?>
     
