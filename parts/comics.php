@@ -17,7 +17,7 @@
       
      ?>
     
-     <div class="card" style="width: 250px;">
+     <div class="card col-md-2 col-sm-4">
         <div class="card-body">
         <img class="card-img" src="<?php echo $thumbnail?>" alt="<?php echo $title . " image."?>" >
         <p class="card-title mute"> <?php echo $title ?> </p>
