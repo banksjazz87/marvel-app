@@ -1,0 +1,14 @@
+.image-container {
+    height: 60vh;
+    width: 45%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 36px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, .4);
+}
+
+.inner-container {
+    column-gap: 20px;
+    margin-top: 2rem;
+}
