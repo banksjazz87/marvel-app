@@ -1,6 +1,6 @@
 .image-container {
     height: 60vh;
-    width: 45%;
+    width: 95%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,4 +11,6 @@
 .inner-container {
     column-gap: 20px;
     margin-top: 2rem;
+    max-width: 1280px;
+    margin: auto;
 }

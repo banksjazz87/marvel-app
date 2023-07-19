@@ -17,6 +17,7 @@
         <script type="text/javascript" src="/src/main.js"></script>
        
     </head>
+
     <?php
     require 'apiClass.php';
     $characters = new MarvelApi(0);
@@ -26,6 +27,7 @@
             $data = $characters->getAllCharacters(0);
         }
     ?>
+
     <body id="main-body">
         <?php 
             $marvel_base = "https://gateway.marvel.com/";
@@ -87,17 +89,13 @@
                         $currentOffset = $_GET['offset'];
                         $currentOffset = $currentOffset + 100;
                         showButton($currentOffset);
-                    }
-
-                    
-                    
+                    }    
                 ?>
 
             </div>
         </article>
 
-       
-
     <?php require 'parts/footer.php'?>
+    
     </body>
 </html>
