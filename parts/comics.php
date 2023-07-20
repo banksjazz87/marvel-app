@@ -17,7 +17,7 @@
       
      ?>
     
-     <div class="card col-md-2 col-sm-4">
+     <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-4">
         <div class="card-body">
         <img class="card-img" src="<?php echo $thumbnail?>" alt="<?php echo $title . " image."?>" >
         <p class="card-title mute"> <?php echo $title ?> </p>
@@ -31,4 +31,6 @@
     
 
 <?php endforeach ?>
+
+
     

@@ -41,9 +41,10 @@ $description = $characterArray['description'];
                 <h1><?php echo $name ?></h1>
             </div>
         </header>
-        <div class="inner-container d-flex flex-row justify-content-center gap-12" style="margin-top: 2rem; column-gap: 2rem;">
-            <div class="image-container" style="background-image: url('<?php echo $image ?>'"></div>
-            <div class="d-flex flex-column">
+        <div class="inner-container d-flex flex-row justify-content-center gap-12" style="margin-top: 2rem; column-gap: 2rem; position: relative;">
+            <div class="image-container" style="background-image: url('<?php echo $image ?>'">
+            <div class="bg-overlay">
+            <div class="inner-text">
                 <h1><?php echo $name ?></h1>
 
                 <?php if (strlen($description) > 0) {
@@ -53,6 +54,8 @@ $description = $characterArray['description'];
                 }
 
                 ?>
+            </div>
+            </div>
             </div>
         </div>
     <article>
