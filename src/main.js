@@ -13,4 +13,9 @@ $(function() {
         window.location = newURL;
     });
 
+    $(".comic-card").click((e) => {
+        $("#selected-card-overlay").css('display', '');
+    });
+
+
 });

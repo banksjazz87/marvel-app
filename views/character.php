@@ -36,11 +36,7 @@ $description = $characterArray['description'];
 
 <body>
     <div id="character_page_wrapper">
-        <header class="header bg-primary-subtle shadow-sm d-flex flex-row justify-content-center align-items-center">
-            <div>
-                <h1><?php echo $name ?></h1>
-            </div>
-        </header>
+        <header>
         <div class="inner-container d-flex flex-row justify-content-center gap-12" style="margin-top: 2rem; column-gap: 2rem; position: relative;">
             <div class="image-container" style="background-image: url('<?php echo $image ?>'">
             <div class="bg-overlay">
@@ -58,6 +54,7 @@ $description = $characterArray['description'];
             </div>
             </div>
         </div>
+            </header>
     <article>
     <div class="header d-flex justify-content-center flex-wrap-wrap mt-6 align-items-center">
         <h2 class="mt-4"><?php echo $name ?> Is Featured In The Following Comics</h2>
