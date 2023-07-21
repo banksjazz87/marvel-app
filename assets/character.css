@@ -45,14 +45,13 @@ body {
     border-radius: 36px;
 }
 
-.card {
+.comic-card {
     transition: all .4s ease-in-out;
 }
 
-.card:hover {
+.comic-card:hover {
     transform: scale(1.05);
     cursor: pointer;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, .5);
 }
 
 #selected-card-overlay {
@@ -76,6 +75,7 @@ body {
     margin: auto;
     margin-top: 10vh;
     box-shadow: none;
+    position: relative;
 }
 
 #overlay-toggle {
@@ -84,4 +84,21 @@ body {
     color: white;
     right: 20%;
     top: 1rem;
+    transition: all .4s ease-in-out;
+}
+
+#overlay-toggle:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#show-more-card-text-content {
+    position: absolute;
+    bottom: 0;
+    padding-left: 2rem;
+    background-color: rgba(0, 0, 0, .9);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    width: 90.2%;
+    left: 1.6rem;
 }

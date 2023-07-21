@@ -4,6 +4,7 @@ $(function() {
         pageLength: 25
     });
 
+
     $(".hero-image").click((e) => {
         e.preventDefault();
 
@@ -13,9 +14,31 @@ $(function() {
         window.location = newURL;
     });
 
-    $(".comic-card").click((e) => {
-        $("#selected-card-overlay").css('display', '');
+
+    $("#overlay-toggle").click(() => {
+        $("#selected-card-overlay").css('display', 'none');
     });
+
+
+    /**
+     * @return void;
+     * @description adds an event listener to each of the comic cards as seen on the character pages.
+     */
+    function comicCardClick() {
+        let cards = $(".comic-card");
+        let images = $(".card-img");
+
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].addEventListener('click', (e) => {
+                let currentImage = images[i].src;
+                $("#selected-card-overlay").css("display", "");
+                $("#selected-card-image").css("background-image", `url(${currentImage})`);
+
+            });
+        }
+    }
+
+    comicCardClick();
 
 
 });
