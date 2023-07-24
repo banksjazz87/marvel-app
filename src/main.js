@@ -31,8 +31,11 @@ $(function() {
         for (let i = 0; i < cards.length; i++) {
             cards[i].addEventListener('click', (e) => {
                 let currentImage = images[i].src;
+                let currentAltText = images[i].alt;
+
                 $("#selected-card-overlay").css("display", "");
-                $("#selected-card-image").css("background-image", `url(${currentImage})`);
+                $("#selected-card-image").attr("src", `${currentImage}`);
+                $("#selected-card-image").attr('alt', `${currentAltText}`);
 
             });
         }
