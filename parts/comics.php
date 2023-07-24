@@ -32,9 +32,11 @@ foreach ($comics['data']['results'] as $value) :
 <?php endforeach ?>
 
 <div id="selected-card-overlay" style="display: none;">
-    <p id="overlay-toggle">X</p>
+<button id="overlay-toggle" type="button" class="close" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
     <div id="selected-card" class="row">
-        <div id="selected-card-image" class="image-container" style="background-image: url('http://i.annihil.us/u/prod/marvel/i/mg/f/b0/5ce80adec965d.jpg')">
+        <div id="selected-card-image" class="image-container" style="background-image: url('http://i.annihil.us/u/prod/marvel/i/mg/f/b0/5ce80adec965d.jpg')"> 
             <div id="card-text-content" style="display: none" class="text-white">
                 <h3 id="selected-card-title">Testing</h3>
                 <p id="selected-card-description">Some sample text pertaining to a comic book.</p>

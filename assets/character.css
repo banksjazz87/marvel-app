@@ -67,15 +67,20 @@ body {
 
 #selected-card {
     margin: auto;
+    width: 50%;
 }
 
 #selected-card-image {
-    width: 50%;
+    width: 100%;
     background-size: contain;
     margin: auto;
     margin-top: 10vh;
     box-shadow: none;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #overlay-toggle {
@@ -85,6 +90,9 @@ body {
     right: 20%;
     top: 1rem;
     transition: all .4s ease-in-out;
+    background-color: unset;
+    box-shadow: unset;
+    border: unset;
 }
 
 #overlay-toggle:hover {
@@ -99,6 +107,7 @@ body {
     background-color: rgba(0, 0, 0, .9);
     padding-top: 2rem;
     padding-bottom: 1rem;
-    width: 90.2%;
-    left: 1.6rem;
+    text-align: center;
+    left: 0;
+    width: 100%;
 }
