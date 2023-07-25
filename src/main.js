@@ -27,21 +27,25 @@ $(function() {
     function comicCardClick() {
         let cards = $(".comic-card");
         let images = $(".card-img");
+        let description = $(".hidden-card-description");
 
         for (let i = 0; i < cards.length; i++) {
             cards[i].addEventListener('click', (e) => {
                 let currentImage = images[i].src;
                 let currentAltText = images[i].alt;
+                let currentDescription = description[i].innerHTML;
 
                 $("#selected-card-overlay").css("display", "");
                 $("#selected-card-image").attr("src", `${currentImage}`);
                 $("#selected-card-image").attr('alt', `${currentAltText}`);
+                alert(currentDescription);
 
             });
         }
     }
 
     comicCardClick();
+
 
 
 });

@@ -119,3 +119,7 @@ body {
     padding: 0;
     margin: auto;
 }
+
+.hidden {
+    display: none;
+}
