@@ -12,10 +12,14 @@ h4 {
     font-family: Roboto Condensed;
 }
 
-.header {
+.main-header {
     height: 20vh;
     background-color: rgb(32, 32, 32);
     font-family: Roboto Condensed;
+}
+
+.header {
+    height: 20vh;
 }
 
 .default-width-btn {
@@ -36,6 +40,7 @@ h4 {
 
 .hero_title {
     margin-top: 2rem;
+    color: black;
 }
 
 .table_row {
@@ -50,6 +55,7 @@ h4 {
     width: 600px;
     text-align: center;
     transition: all .4s ease-in-out;
+    padding-bottom: 2rem;
 }
 
 .hero-image {
@@ -71,7 +77,7 @@ h4 {
     color: white;
     border-radius: 12px;
     box-shadow: 0 12px 36px rgba(0, 0, 0, .4);
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(16, 16, 16);
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
@@ -82,12 +88,23 @@ h4 {
     margin-bottom: 2rem;
 }
 
+#marvel_table_filter {
+    margin-left: -4rem;
+}
+
 .table-data {
     width: 200px;
 }
 
+tbody {
+    background-color: white;
+}
+
 .table-header {
-    padding-top: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 20px;
+    font-family: Roboto Condensed;
 }
 
 .table-header:first-child {
@@ -95,5 +112,14 @@ h4 {
 }
 
 .title_data {
+    padding-left: 2rem;
+}
+
+.dataTables_length {
+    padding-left: 2rem;
+    width: auto;
+}
+
+.dataTables_info {
     padding-left: 2rem;
 }
