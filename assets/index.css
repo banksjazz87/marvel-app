@@ -2,10 +2,20 @@
     margin: 0;
     padding: 0;
     top: 0;
+    font-family: Roboto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: Roboto Condensed;
 }
 
 .header {
     height: 20vh;
+    background-color: rgb(32, 32, 32);
+    font-family: Roboto Condensed;
 }
 
 .default-width-btn {
@@ -56,11 +66,20 @@
     text-align: center;
 }
 
-#marvel_table {
+#marvel_table_wrapper {
     min-width: 950px;
     color: white;
     border-radius: 12px;
     box-shadow: 0 12px 36px rgba(0, 0, 0, .4);
+    background-color: rgb(32, 32, 32);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#marvel_table {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .table-data {

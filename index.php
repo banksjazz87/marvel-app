@@ -15,7 +15,12 @@
         <script type="text/javascript" src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
         <script type="text/javascript" src="/src/main.js"></script>
-       
+        <script src="https://kit.fontawesome.com/6412fbb59a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+
     </head>
 
     <?php
@@ -33,7 +38,7 @@
             $marvel_base = "https://gateway.marvel.com/";
         ?>
 
-        <header class="header bg-primary-subtle shadow-sm d-flex flex-row justify-content-center align-items-center">
+        <header class="header shadow-sm d-flex flex-row justify-content-center align-items-center text-white">
             <div>
                 <h1>Marvel App</h1>
             </div>
@@ -56,7 +61,7 @@
         </div>
         <article id="table_article" style="margin-top: 2rem;">
             <div class="d-flex flex-column justify-content-center align-items-center column-gap-3">
-                <table id="marvel_table" class="display bg-dark">
+                <table id="marvel_table" class="display">
                     <thead>
                         <tr>
                             <th class="table-header">Name</th>
@@ -96,6 +101,6 @@
         </article>
 
     <?php require 'parts/footer.php'?>
-    
+
     </body>
 </html>

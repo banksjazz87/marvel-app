@@ -17,6 +17,12 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/src/main.js"></script>
+    <script src="https://kit.fontawesome.com/6412fbb59a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+
 
 </head>
 
@@ -37,33 +43,35 @@ $description = $characterArray['description'];
 <body>
     <div id="character_page_wrapper">
         <header>
-        <div class="inner-container d-flex flex-row justify-content-center gap-12" style="margin-top: 2rem; column-gap: 2rem; position: relative;">
-            <div class="image-container" style="background-image: url('<?php echo $image ?>'">
-            <div class="bg-overlay">
-            <div class="inner-text">
-                <h1><?php echo $name ?></h1>
+            <div class="inner-container d-flex flex-row justify-content-center gap-12" style="margin-top: 2rem; column-gap: 2rem; position: relative;">
+                <div class="image-container" style="background-image: url('<?php echo $image ?>'">
+                    <div class="bg-overlay">
+                        <div class="inner-text">
+                            <h1><?php echo $name ?></h1>
 
-                <?php if (strlen($description) > 0) {
-                    echo "<p>$description</p>";
-                } else {
-                    echo "<p>Unfortunately $name has no available description</p>";
-                }
+                            <?php if (strlen($description) > 0) {
+                                echo "<p>$description</p>";
+                            } else {
+                                echo "<p>Unfortunately $name has no available description</p>";
+                            }
 
-                ?>
+                            ?>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </header>
+        <article>
+            <div class="header d-flex justify-content-center flex-wrap-wrap mt-6 align-items-center">
+                <h2 class="mt-4"><?php echo $name ?> Is Featured In The Following Comics</h2>
             </div>
+            <div class="row d-flex flex-row justify-content-center gap-4 mt-4 mb-4">
+                <?php include "../parts/comics.php" ?>
             </div>
-        </div>
-            </header>
-    <article>
-    <div class="header d-flex justify-content-center flex-wrap-wrap mt-6 align-items-center">
-        <h2 class="mt-4"><?php echo $name ?> Is Featured In The Following Comics</h2>
+        </article>
     </div>
-    <div class="row d-flex flex-row justify-content-center gap-4 mt-4">
-        <?php include "../parts/comics.php" ?>
-    </div>
-    </article>
-    </div>
+
+    <?php include "../parts/footer.php" ?>
 
 </body>
 
