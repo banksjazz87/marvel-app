@@ -37,14 +37,14 @@ if (isset($_GET['offset'])) {
     $marvel_base = "https://gateway.marvel.com/";
     ?>
 
-    <header class="main-header header shadow-sm d-flex flex-row justify-content-center align-items-center text-white">
+    <header class="main-header header shadow-sm d-flex flex-wrap-wrap flex-row justify-content-center align-items-center text-white">
         <div>
             <h1>Marvel App</h1>
         </div>
     </header>
 
     <article style="margin-top: 2rem">
-        <div class="d-flex flex-column justify-content-center align-items-center row-gap-3">
+        <div class="d-flex flex-column justify-content-center align-items-center row-gap-3 text-center">
             <h2>Welcome to the wonderful world of Marvel.</h2>
         </div>
     </article>
@@ -84,7 +84,7 @@ if (isset($_GET['offset'])) {
                     <tr>
                         <th class="table-header">Name</th>
                         <th class="table-header image-header">Image</th>
-                        <th></th>
+                        <th class="table-header"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -95,26 +95,6 @@ if (isset($_GET['offset'])) {
                     ?>
                 </tbody>
             </table>
-
-            <!-- <?php
-
-                    // function showButton($num) {
-                    //     echo "<form method='get' action='/index.php/'><input type='hidden' name='offset' id='offset' value='$num'><input type='submit' value='See More' class='btn btn-info'/></form>";
-                    // }
-
-                    //     if (!isset($_GET['offset'])) {
-                    //         showButton(100);
-
-                    //     } else if ($_GET['offset'] === 1500 ) {
-                    //         showButton(0);
-
-                    //     } else {
-                    //         $currentOffset = $_GET['offset'];
-                    //         $currentOffset = $currentOffset + 100;
-                    //         showButton($currentOffset);
-                    //     }    
-                    ?> -->
-
         </div>
     </article>
 

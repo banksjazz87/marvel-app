@@ -88,6 +88,10 @@ h4 {
     margin-bottom: 2rem;
 }
 
+#marvel_table thead {
+    background-color: white;
+}
+
 #marvel_table_filter {
     margin-left: -4rem;
 }
@@ -105,6 +109,7 @@ tbody {
     padding-bottom: 1rem;
     font-size: 20px;
     font-family: Roboto Condensed;
+    color: black;
 }
 
 .table-header:first-child {
@@ -122,4 +127,36 @@ tbody {
 
 .dataTables_info {
     padding-left: 2rem;
+}
+
+@media (max-width: 1024px) {
+    #marvel_table_wrapper {
+        max-width: 90%;
+        width: 90%;
+        min-width: unset;
+    }
+    #marvel_table {
+        border-collapse: collapse;
+    }
+    td {
+        border-style: none;
+        border-collapse: collapse;
+    }
+    tr {
+        border-collapse: collapse !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-image {
+        width: 50px;
+        height: auto;
+    }
+    #marvel_table_filter,
+    .dataTables_length,
+    .dataTables_paginate {
+        width: 100%;
+        padding-left: 2rem;
+        margin: auto;
+    }
 }
