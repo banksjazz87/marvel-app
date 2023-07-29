@@ -1,8 +1,4 @@
-<!-- <?php
-        $comics = $api->getCharacterComics();
-        //$image = $characterArray['thumbnail']['path'] . "." . $characterArray['thumbnail']['extension'];
 
-        ?> -->
 
 
 <?php

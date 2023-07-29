@@ -42,8 +42,8 @@ $description = $characterArray['description'];
 
 <body>
     <div id="character_page_wrapper">
-        <header>
-            <div class="inner-container d-flex flex-row justify-content-center gap-12" style="margin-top: 2rem; column-gap: 2rem; position: relative;">
+        <header class="bg-dark pt-4 pb-4">
+            <div class="inner-container d-flex flex-row justify-content-center gap-12" style="column-gap: 2rem; position: relative;">
                 <div class="image-container" style="background-image: url('<?php echo $image ?>'">
                     <div class="bg-overlay">
                         <div class="inner-text">
