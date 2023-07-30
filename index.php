@@ -79,7 +79,7 @@ if (isset($_GET['offset'])) {
     </div>
     <article id="table_article" style="margin-top: 2rem;">
         <div class="d-flex flex-column justify-content-center align-items-center column-gap-3">
-            <table id="marvel_table" class="display">
+            <table id="marvel_table" class="display" cellpadding="0" >
                 <thead>
                     <tr>
                         <th class="table-header">Name</th>

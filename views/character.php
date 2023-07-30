@@ -63,7 +63,7 @@ $description = $characterArray['description'];
         </header>
         <article>
             <div class="header d-flex justify-content-center flex-wrap-wrap mt-6 align-items-center">
-                <h2 class="mt-4"><?php echo $name ?> Is Featured In The Following Comics</h2>
+                <h2 class="mt-4 text-center"><?php echo $name ?> Is Featured In The Following Comics</h2>
             </div>
             <div class="row d-flex flex-row justify-content-center gap-4 mt-4 mb-4">
                 <?php include "../parts/comics.php" ?>

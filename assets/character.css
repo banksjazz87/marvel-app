@@ -101,6 +101,7 @@ body {
     background-color: unset;
     box-shadow: unset;
     border: unset;
+    z-index: 7;
 }
 
 #overlay-toggle:hover {
@@ -152,5 +153,8 @@ body {
     }
     #selected-card {
         width: 100%;
+    }
+    #overlay-toggle {
+        right: 5%;
     }
 }
