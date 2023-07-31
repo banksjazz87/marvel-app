@@ -1,13 +1,20 @@
-
-<?php 
-class MarvelApi {
+<?php
+class MarvelApi
+{
     public $id;
 
-    function __construct($id) {
+    function __construct($id)
+    {
         $this->id = $id;
     }
 
-    function getResponse($url) {
+
+    /**
+     * @param takes a url that is a tring.
+     * @return a response from the api.
+     */
+    function getResponse($url)
+    {
         include 'private.php';
 
         curl_setopt($curl, CURLOPT_URL, "$url");
@@ -22,8 +29,14 @@ class MarvelApi {
 
         return $result;
     }
-    
-    function getAllCharacters($offsetNum) {
+
+
+    /**
+     * @param int of the current offset number needed, in order to update which characters are being displayed.
+     * @return api response of the next 100 characters starting from the offset number that is passed in as the parameter.
+     */
+    function getAllCharacters($offsetNum)
+    {
         include 'private.php';
 
         $responseData = $this->getResponse("https://gateway.marvel.com:443/v1/public/characters?ts=$timestamp&offset=$offsetNum&limit=100&apikey=$publicKey&hash=$md5");
@@ -31,7 +44,12 @@ class MarvelApi {
         return $responseData;
     }
 
-    function getOneCharacter() {
+
+    /**
+     * @return api data relating to the id that is passed in, in the constructor function.
+     */
+    function getOneCharacter()
+    {
         include 'private.php';
 
         $responseData = $this->getResponse("https://gateway.marvel.com:443/v1/public/characters/$this->id?ts=$timestamp&limit=75&apikey=$publicKey&hash=$md5");
@@ -39,15 +57,16 @@ class MarvelApi {
         return $responseData;
     }
 
-    function getCharacterComics() {
+
+    /**
+     * @return comics pertaining to the character's id that is passed in in the constructor function.
+     */
+    function getCharacterComics()
+    {
         include 'private.php';
 
         $responseData = $this->getResponse("https://gateway.marvel.com:443/v1/public/characters/$this->id/comics?ts=$timestamp&limit=75&apikey=$publicKey&hash=$md5");
-        
+
         return $responseData;
     }
-
-
 }
-
-?>

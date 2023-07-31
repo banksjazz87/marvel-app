@@ -18,10 +18,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/src/main.js"></script>
     <script src="https://kit.fontawesome.com/6412fbb59a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
 
 
 </head>
@@ -61,14 +59,18 @@ $description = $characterArray['description'];
                 </div>
             </div>
         </header>
-        <article>
-            <div class="header d-flex justify-content-center flex-wrap-wrap mt-6 align-items-center">
-                <h2 class="mt-4 text-center"><?php echo $name ?> Is Featured In The Following Comics</h2>
-            </div>
-            <div class="row d-flex flex-row justify-content-center gap-4 mt-4 mb-4">
-                <?php include "../parts/comics.php" ?>
-            </div>
-        </article>
+
+        <main>
+            <article>
+                <div class="header d-flex justify-content-center flex-wrap-wrap mt-6 align-items-center">
+                    <h2 class="mt-4 text-center"><?php echo $name ?> Is Featured In The Following Comics</h2>
+                </div>
+                <div class="row d-flex flex-row justify-content-center gap-4 mt-4 mb-4">
+                    <?php include "../parts/comics.php" ?>
+                </div>
+            </article>
+        </main>
+        
     </div>
 
     <?php include "../parts/footer.php" ?>

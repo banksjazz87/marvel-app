@@ -1,10 +1,11 @@
 $(function() {
 
+    //Controls the initial datatable page length.
     $('#marvel_table').dataTable({
         pageLength: 25
     });
 
-
+    //Updates the url when the user clicks on a hero image in the datatable.
     $(".hero-image").click((e) => {
         e.preventDefault();
 
@@ -14,28 +15,15 @@ $(function() {
         window.location = newURL;
     });
 
-
+    //Controls the display of the overlay.
     $("#overlay-toggle").click(() => {
         $("#selected-card-overlay").css('display', 'none');
     });
 
 
-
-    /**
-     * 
-     * @param {*} str takes on the type of string.
-     * @param {*} element takes on the type of an HTML element.
-     * @return void.
-     * @description determines if an element should be shown based on text content being present.
-     */
-    function checkForDescription(str, element) {
-        str ? element.style.display = "" : element.style.display = "none";
-    }
-
-
     /**
      * @return void.
-     * @description adds an event listener to each of the comic cards as seen on the character pages.
+     * @description adds an event listener to each of the comic cards as seen on the character pages.  Updates the image, description text, and title of the card that overlays the display.
      */
     function comicCardClick() {
         let cards = $(".comic-card");
@@ -54,7 +42,7 @@ $(function() {
                 $("#selected-card-image").attr("src", `${currentImage}`);
                 $("#selected-card-image").attr('alt', `${currentAltText}`);
 
-
+                //Checks to see if there is a description that goes along with the comic, if not, nothing is displayed.
                 if (currentDescription) {
                     $("#show-more-card-text-content").css('display', '');
                     $("#selected-card-description").text(currentDescription);
@@ -66,19 +54,20 @@ $(function() {
         }
     }
 
+    //Call the function to add the event listeners.
     comicCardClick();
 
+    //Show the card text content, hide the show more card text content.
     $("#comic-description-btn").click(() => {
         $('#card-text-content').css("display", "");
         $('#show-more-card-text-content').css('display', 'none');
     });
 
 
+    //Hide the text content associated with the comic and display the option to show more text.
     $("#card-content-toggle").click(() => {
         $("#card-text-content").css("display", "none");
         $('#show-more-card-text-content').css("display", "");
     })
-
-
 
 });

@@ -1,5 +1,6 @@
 <?php
 function returnNamesAndImages($value) {
+
     foreach ( $value["data"]["results"] as $hero) {
         $img_src = $hero['thumbnail']['path'];
 
@@ -17,6 +18,5 @@ function returnNamesAndImages($value) {
 
             echo $data_row .= "</tr>";
     }
-
+    
 }
-?>

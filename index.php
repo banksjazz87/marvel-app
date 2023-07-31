@@ -43,60 +43,63 @@ if (isset($_GET['offset'])) {
         </div>
     </header>
 
-    <article style="margin-top: 2rem">
-        <div class="d-flex flex-column justify-content-center align-items-center row-gap-3 text-center">
-            <h2>Welcome to the wonderful world of Marvel.</h2>
-        </div>
-    </article>
+    <main>
+        <article style="margin-top: 2rem">
+            <div class="d-flex flex-column justify-content-center align-items-center row-gap-3 text-center">
+                <h2>Welcome to the wonderful world of Marvel.</h2>
+            </div>
+        </article>
 
-    <div style="margin-top: 4rem" class="d-flex flex-column justify-content-center align-items-center">
-        <h3 class="pt-6 text-center">
-            Currently Displaying: <br>
+        <div style="margin-top: 4rem" class="d-flex flex-column justify-content-center align-items-center">
+            <h3 class="pt-6 text-center">
+                Currently Displaying: <br>
+                <?php
+                $first = array_slice($data['data']['results'], 0, 1);
+                $last = array_slice($data['data']['results'], -1, 1);
+                echo "{$first[0]['name']} - {$last[0]['name']}";
+                ?>
+            </h3>
+
             <?php
-            $first = array_slice($data['data']['results'], 0, 1);
-            $last = array_slice($data['data']['results'], -1, 1);
-            echo "{$first[0]['name']} - {$last[0]['name']}";
+
+            function showButton($num)
+            {
+                echo "<form method='get' action='/index.php/' class='mt-2'><input type='hidden' name='offset' id='offset' value='$num'><input type='submit' value='Load More' class='btn btn-info'/></form>";
+            }
+
+            if (!isset($_GET['offset'])) {
+                showButton(100);
+            } else if ($_GET['offset'] === 1500) {
+                showButton(0);
+            } else {
+                $currentOffset = $_GET['offset'];
+                $currentOffset = $currentOffset + 100;
+                showButton($currentOffset);
+            }
             ?>
-        </h3>
-
-        <?php
-
-        function showButton($num)
-        {
-            echo "<form method='get' action='/index.php/' class='mt-2'><input type='hidden' name='offset' id='offset' value='$num'><input type='submit' value='Load More' class='btn btn-info'/></form>";
-        }
-
-        if (!isset($_GET['offset'])) {
-            showButton(100);
-        } else if ($_GET['offset'] === 1500) {
-            showButton(0);
-        } else {
-            $currentOffset = $_GET['offset'];
-            $currentOffset = $currentOffset + 100;
-            showButton($currentOffset);
-        }
-        ?>
-    </div>
-    <article id="table_article" style="margin-top: 2rem;">
-        <div class="d-flex flex-column justify-content-center align-items-center column-gap-3">
-            <table id="marvel_table" class="display" cellpadding="0" >
-                <thead>
-                    <tr>
-                        <th class="table-header">Name</th>
-                        <th class="table-header image-header">Image</th>
-                        <th class="table-header"></th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <?php
-                    require './parts/characterTable.php';
-                    returnNamesAndImages($data);
-                    ?>
-                </tbody>
-            </table>
         </div>
-    </article>
+        <article id="table_article" style="margin-top: 2rem;">
+            <div class="d-flex flex-column justify-content-center align-items-center column-gap-3">
+                <table id="marvel_table" class="display" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th class="table-header">Name</th>
+                            <th class="table-header image-header">Image</th>
+                            <th class="table-header"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <?php
+                        require './parts/characterTable.php';
+                        returnNamesAndImages($data);
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+    </main>
 
     <?php require 'parts/footer.php' ?>
 

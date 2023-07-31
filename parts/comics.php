@@ -1,8 +1,7 @@
-
-
-
 <?php
 $comics = $api->getCharacterComics();
+
+
 foreach ($comics['data']['results'] as $value) :
 ?>
     <?php
@@ -21,8 +20,8 @@ foreach ($comics['data']['results'] as $value) :
         </div>
     </div>
 
-
 <?php endforeach ?>
+
 
 <div id="selected-card-overlay" style="display: none;" class="container-fluid">
     <button id="overlay-toggle" type="button" class="close" aria-label="Close">
