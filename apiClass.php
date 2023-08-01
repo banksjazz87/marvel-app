@@ -2,10 +2,28 @@
 class MarvelApi
 {
     public $id;
+    public $timestamp;
+    public $md5;
+    public $pubKey;
+    public $privKey;
 
     function __construct($id)
     {
+        include 'private.php';
+
+        $date = new DateTime();
+        $time = $date->getTimestamp();
+
+        $keys = $privateKey . $publicKey;
+        $string = $time . $keys;
+        $hash = hash('md5', $string);
+
         $this->id = $id;
+        $this->timestamp = $time;
+        $this->md5 = $hash;
+        $this->pubKey = $publicKey;
+        $this->privKey = $privateKey;
+
     }
 
 
@@ -16,6 +34,8 @@ class MarvelApi
     function getResponse($url)
     {
         include 'private.php';
+
+        $curl = curl_init();
 
         curl_setopt($curl, CURLOPT_URL, "$url");
         curl_setopt($curl, CURLOPT_HEADER, 0);
@@ -37,9 +57,7 @@ class MarvelApi
      */
     function getAllCharacters($offsetNum)
     {
-        include 'private.php';
-
-        $responseData = $this->getResponse("https://gateway.marvel.com:443/v1/public/characters?ts=$timestamp&offset=$offsetNum&limit=100&apikey=$publicKey&hash=$md5");
+        $responseData = $this->getResponse("https://gateway.marvel.com:443/v1/public/characters?ts=$this->timestamp&offset=$offsetNum&limit=100&apikey=$this->pubKey&hash=$this->md5");
 
         return $responseData;
     }
@@ -50,9 +68,8 @@ class MarvelApi
      */
     function getOneCharacter()
     {
-        include 'private.php';
-
-        $responseData = $this->getResponse("https://gateway.marvel.com:443/v1/public/characters/$this->id?ts=$timestamp&limit=75&apikey=$publicKey&hash=$md5");
+    
+        $responseData = $this->getResponse("https://gateway.marvel.com:443/v1/public/characters/$this->id?ts=$this->timestamp&limit=75&apikey=$this->pubKey&hash=$this->md5");
 
         return $responseData;
     }
@@ -63,9 +80,7 @@ class MarvelApi
      */
     function getCharacterComics()
     {
-        include 'private.php';
-
-        $responseData = $this->getResponse("https://gateway.marvel.com:443/v1/public/characters/$this->id/comics?ts=$timestamp&limit=75&apikey=$publicKey&hash=$md5");
+        $responseData = $this->getResponse("https://gateway.marvel.com:443/v1/public/characters/$this->id/comics?ts=$this->timestamp&limit=75&apikey=$this->pubKey&hash=$this->md5");
 
         return $responseData;
     }
