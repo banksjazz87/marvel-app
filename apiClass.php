@@ -9,12 +9,14 @@ class MarvelApi
 
     function __construct($id)
     {
-        include 'private.php';
+        // include 'private.php';
 
         $date = new DateTime();
         $time = $date->getTimestamp();
+        $priv = getenv('privateKey');
+        $pub = getenv('publicKey');
 
-        $keys = $privateKey . $publicKey;
+        $keys = $priv . $pub;
         $string = $time . $keys;
         $hash = hash('md5', $string);
 
@@ -33,7 +35,7 @@ class MarvelApi
      */
     function getResponse($url)
     {
-        include 'private.php';
+        // include 'private.php';
 
         $curl = curl_init();
 
