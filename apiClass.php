@@ -21,8 +21,8 @@ class MarvelApi
         $this->id = $id;
         $this->timestamp = $time;
         $this->md5 = $hash;
-        $this->pubKey = $publicKey;
-        $this->privKey = $privateKey;
+        $this->pubKey = getenv('publicKey');
+        $this->privKey = getenv('privateKey');
 
     }
 
@@ -58,7 +58,6 @@ class MarvelApi
     function getAllCharacters($offsetNum)
     {
 
-        echo "this is the pubkey $this->pubKey";
         $responseData = $this->getResponse("https://gateway.marvel.com:443/v1/public/characters?ts=$this->timestamp&offset=$offsetNum&limit=100&apikey=$this->pubKey&hash=$this->md5");
 
         return $responseData;
