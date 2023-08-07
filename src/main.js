@@ -18,6 +18,9 @@ $(function() {
     //Controls the display of the overlay.
     $("#overlay-toggle").click(() => {
         $("#selected-card-overlay").css('display', 'none');
+        $("#show-more-card-text-content").css('display', 'none');
+
+        hideComicDescription();
     });
 
 
@@ -65,9 +68,12 @@ $(function() {
 
 
     //Hide the text content associated with the comic and display the option to show more text.
-    $("#card-content-toggle").click(() => {
+    function hideComicDescription() {
         $("#card-text-content").css("display", "none");
         $('#show-more-card-text-content').css("display", "");
+    }
+    $("#card-content-toggle").click((e) => {
+        hideComicDescription();
     })
 
 });
