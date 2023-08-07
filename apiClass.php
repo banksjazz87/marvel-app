@@ -9,15 +9,17 @@ class MarvelApi
 
     function __construct($id)
     {
-         include 'private.php';
+        //This include is just for development.
+        //include 'private.php';
 
         $date = new DateTime();
         $time = $date->getTimestamp();
-        // $priv = getenv('privateKey');
-        // $pub = getenv('publicKey');
+        $priv = getenv('privateKey');
+        $pub = getenv('publicKey');
+
         //Following two lines are for developement
-        $priv = $privateKey;
-        $pub = $publicKey;
+        // $priv = $privateKey;
+        // $pub = $publicKey;
 
         $keys = $priv . $pub;
         $string = $time . $keys;
@@ -26,11 +28,12 @@ class MarvelApi
         $this->id = $id;
         $this->timestamp = $time;
         $this->md5 = $hash;
-        // $this->pubKey = getenv('publicKey');
-        // $this->privKey = getenv('privateKey');
-        //Following two lines are for developement
-        $this->pubKey = $publicKey;
-        $this->privKey = $privateKey;
+        $this->pubKey = getenv('publicKey');
+        $this->privKey = getenv('privateKey');
+        
+        // Following two lines are for developement
+        // $this->pubKey = $publicKey;
+        // $this->privKey = $privateKey;
 
     }
 
